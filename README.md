@@ -1,11 +1,11 @@
 <div align="center">
     <img src="./media/logo_small.webp"/>
-    <h1>🌱 Spec Kit</h1>
-    <h3><em>Build high-quality software faster.</em></h3>
+    <h1>🌱 Course Spec Kit</h1>
+    <h3><em>Design high-quality online courses faster.</em></h3>
 </div>
 
 <p align="center">
-    <strong>An effort to allow organizations to focus on product scenarios rather than writing undifferentiated code with the help of Spec-Driven Development.</strong>
+    <strong>An effort to allow educators and organizations to focus on learning outcomes and course scenarios rather than undifferentiated course structure with the help of Spec-Driven Development.</strong>
 </p>
 
 <p align="center">
@@ -36,13 +36,13 @@
 - [🙏 Acknowledgements](#-acknowledgements)
 - [📄 License](#-license)
 
-## 🤔 What is Spec-Driven Development?
+## 🤔 What is Spec-Driven Development for Courses?
 
-Spec-Driven Development **flips the script** on traditional software development. For decades, code has been king — specifications were just scaffolding we built and discarded once the "real work" of coding began. Spec-Driven Development changes this: **specifications become executable**, directly generating working implementations rather than just guiding them.
+Spec-Driven Development **flips the script** on traditional course development. For decades, course materials have been created ad-hoc — course outlines were rough sketches we built and revised endlessly during delivery. Spec-Driven Development changes this: **course specifications become executable**, directly generating structured learning experiences rather than just guiding them.
 
 ## ⚡ Get started
 
-### 1. Install Specify
+### 1. Install Course Specify
 
 Choose your preferred installation method:
 
@@ -51,20 +51,20 @@ Choose your preferred installation method:
 Install once and use everywhere:
 
 ```bash
-uv tool install specify-cli --from git+https://github.com/github/spec-kit.git
+uv tool install specify-cli --from git+https://github.com/daqi/course-spec-kit.git
 ```
 
 Then use the tool directly:
 
 ```bash
-specify init <PROJECT_NAME>
+specify init <COURSE_PROJECT_NAME>
 specify check
 ```
 
 To upgrade specify run:
 
 ```bash
-uv tool install specify-cli --force --from git+https://github.com/github/spec-kit.git
+uv tool install specify-cli --force --from git+https://github.com/daqi/course-spec-kit.git
 ```
 
 #### Option 2: One-time Usage
@@ -72,7 +72,7 @@ uv tool install specify-cli --force --from git+https://github.com/github/spec-ki
 Run directly without installing:
 
 ```bash
-uvx --from git+https://github.com/github/spec-kit.git specify init <PROJECT_NAME>
+uvx --from git+https://github.com/daqi/course-spec-kit.git specify init <COURSE_PROJECT_NAME>
 ```
 
 **Benefits of persistent installation:**
@@ -82,41 +82,41 @@ uvx --from git+https://github.com/github/spec-kit.git specify init <PROJECT_NAME
 - Better tool management with `uv tool list`, `uv tool upgrade`, `uv tool uninstall`
 - Cleaner shell configuration
 
-### 2. Establish project principles
+### 2. Establish course principles
 
-Use the **`/speckit.constitution`** command to create your project's governing principles and development guidelines that will guide all subsequent development.
-
-```bash
-/speckit.constitution Create principles focused on code quality, testing standards, user experience consistency, and performance requirements
-```
-
-### 3. Create the spec
-
-Use the **`/speckit.specify`** command to describe what you want to build. Focus on the **what** and **why**, not the tech stack.
+Use the **`/speckit.constitution`** command to create your course's governing principles and instructional guidelines that will guide all subsequent course development.
 
 ```bash
-/speckit.specify Build an application that can help me organize my photos in separate photo albums. Albums are grouped by date and can be re-organized by dragging and dropping on the main page. Albums are never in other nested albums. Within each album, photos are previewed in a tile-like interface.
+/speckit.constitution Create principles focused on learning outcomes, student engagement, accessibility standards, and assessment quality for a JavaScript web development course
 ```
 
-### 4. Create a technical implementation plan
+### 3. Create the course spec
 
-Use the **`/speckit.plan`** command to provide your tech stack and architecture choices.
+Use the **`/speckit.specify`** command to describe the learning module you want to create. Focus on the **what** students will learn and **why**, not the specific technologies.
 
 ```bash
-/speckit.plan The application uses Vite with minimal number of libraries. Use vanilla HTML, CSS, and JavaScript as much as possible. Images are not uploaded anywhere and metadata is stored in a local SQLite database.
+/speckit.specify Create a module that teaches students how to build interactive web applications using modern JavaScript. Students should learn asynchronous programming concepts, DOM manipulation, and event handling. By the end, they should be able to create a dynamic task management application with user interactions and data persistence.
 ```
 
-### 5. Break down into tasks
+### 4. Create an instructional plan
 
-Use **`/speckit.tasks`** to create an actionable task list from your implementation plan.
+Use the **`/speckit.plan`** command to provide your course delivery approach and learning technologies.
+
+```bash
+/speckit.plan The course uses interactive coding exercises with vanilla JavaScript, HTML, and CSS. Students will work on hands-on projects using browser-based development environments. Assessment includes coding challenges, project submissions, and peer code reviews.
+```
+
+### 5. Break down into learning tasks
+
+Use **`/speckit.tasks`** to create an actionable task list from your instructional plan.
 
 ```bash
 /speckit.tasks
 ```
 
-### 6. Execute implementation
+### 6. Execute course development
 
-Use **`/speckit.implement`** to execute all tasks and build your feature according to the plan.
+Use **`/speckit.implement`** to execute all tasks and build your course module according to the plan.
 
 ```bash
 /speckit.implement
@@ -221,15 +221,15 @@ After running `specify init`, your AI coding agent will have access to these sla
 
 #### Core Commands
 
-Essential commands for the Spec-Driven Development workflow:
+Essential commands for the Spec-Driven Course Development workflow:
 
 | Command                  | Description                                                           |
 |--------------------------|-----------------------------------------------------------------------|
-| `/speckit.constitution`  | Create or update project governing principles and development guidelines |
-| `/speckit.specify`       | Define what you want to build (requirements and user stories)        |
-| `/speckit.plan`          | Create technical implementation plans with your chosen tech stack     |
-| `/speckit.tasks`         | Generate actionable task lists for implementation                     |
-| `/speckit.implement`     | Execute all tasks to build the feature according to the plan         |
+| `/speckit.constitution`  | Create or update course governing principles and instructional guidelines |
+| `/speckit.specify`       | Define the learning module (learning outcomes and student journeys)  |
+| `/speckit.plan`          | Create instructional plans with your chosen delivery approach        |
+| `/speckit.tasks`         | Generate actionable task lists for course development                |
+| `/speckit.implement`     | Execute all tasks to build the course module according to the plan   |
 
 #### Optional Commands
 
@@ -249,20 +249,20 @@ Additional commands for enhanced quality and validation:
 
 ## 📚 Core philosophy
 
-Spec-Driven Development is a structured process that emphasizes:
+Spec-Driven Course Development is a structured process that emphasizes:
 
-- **Intent-driven development** where specifications define the "_what_" before the "_how_"
-- **Rich specification creation** using guardrails and organizational principles
-- **Multi-step refinement** rather than one-shot code generation from prompts
-- **Heavy reliance** on advanced AI model capabilities for specification interpretation
+- **Learning outcome-driven design** where specifications define the "_what students will learn_" before the "_how to teach it_"
+- **Rich course specification creation** using instructional design principles and pedagogical guidelines
+- **Multi-step refinement** rather than one-shot course generation from prompts
+- **Heavy reliance** on advanced AI model capabilities for educational specification interpretation
 
 ## 🌟 Development phases
 
 | Phase | Focus | Key Activities |
 |-------|-------|----------------|
-| **0-to-1 Development** ("Greenfield") | Generate from scratch | <ul><li>Start with high-level requirements</li><li>Generate specifications</li><li>Plan implementation steps</li><li>Build production-ready applications</li></ul> |
-| **Creative Exploration** | Parallel implementations | <ul><li>Explore diverse solutions</li><li>Support multiple technology stacks & architectures</li><li>Experiment with UX patterns</li></ul> |
-| **Iterative Enhancement** ("Brownfield") | Brownfield modernization | <ul><li>Add features iteratively</li><li>Modernize legacy systems</li><li>Adapt processes</li></ul> |
+| **0-to-1 Course Creation** ("Greenfield") | Generate from scratch | <ul><li>Start with high-level learning objectives</li><li>Generate course specifications</li><li>Plan instructional steps</li><li>Build complete learning modules</li></ul> |
+| **Creative Exploration** | Parallel approaches | <ul><li>Explore diverse teaching methods</li><li>Support multiple delivery formats & technologies</li><li>Experiment with engagement patterns</li></ul> |
+| **Iterative Enhancement** ("Course Evolution") | Course modernization | <ul><li>Add learning modules iteratively</li><li>Update existing course materials</li><li>Adapt pedagogical approaches</li></ul> |
 
 ## 🎯 Experimental goals
 
@@ -270,25 +270,25 @@ Our research and experimentation focus on:
 
 ### Technology independence
 
-- Create applications using diverse technology stacks
-- Validate the hypothesis that Spec-Driven Development is a process not tied to specific technologies, programming languages, or frameworks
+- Create courses using diverse technology stacks and delivery platforms
+- Validate the hypothesis that Spec-Driven Course Development is a process not tied to specific LMS platforms, authoring tools, or frameworks
 
-### Enterprise constraints
+### Educational constraints
 
-- Demonstrate mission-critical application development
-- Incorporate organizational constraints (cloud providers, tech stacks, engineering practices)
-- Support enterprise design systems and compliance requirements
+- Demonstrate course development for various learning contexts
+- Incorporate organizational constraints (LMS requirements, accessibility standards, assessment policies)
+- Support institutional learning design systems and compliance requirements
 
-### User-centric development
+### Learner-centric development
 
-- Build applications for different user cohorts and preferences
-- Support various development approaches (from vibe-coding to AI-native development)
+- Build courses for different learner cohorts and learning preferences
+- Support various instructional approaches (from traditional to modern pedagogies)
 
 ### Creative & iterative processes
 
-- Validate the concept of parallel implementation exploration
-- Provide robust iterative feature development workflows
-- Extend processes to handle upgrades and modernization tasks
+- Validate the concept of parallel instructional approach exploration
+- Provide robust iterative course development workflows
+- Extend processes to handle course updates and modernization tasks
 
 ## 🔧 Prerequisites
 
