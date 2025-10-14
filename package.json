@@ -1,6 +1,6 @@
 {
-  "name": "specify-cli",
-  "version": "0.0.23",
+  "name": "course-specify",
+  "version": "0.0.24",
   "description": "Course Specify CLI, part of Course Spec Kit. A tool to bootstrap your course projects for Spec-Driven Course Development (SDD).",
   "type": "module",
   "bin": {

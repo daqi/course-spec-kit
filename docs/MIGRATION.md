@@ -26,7 +26,7 @@ Starting from version 0.0.21, the Course Specify CLI has been refactored from Py
 #### Old Method (Python - Deprecated)
 
 ```bash
-uv tool install specify-cli --from git+https://github.com/daqi/course-spec-kit.git
+uv tool install course-specify --from git+https://github.com/daqi/course-spec-kit.git
 ```
 
 #### New Method (Node.js - Recommended)
@@ -57,9 +57,9 @@ All command-line functionality remains **100% identical** (except command name c
 
 1. **Uninstall the Python version:**
    ```bash
-   uv tool uninstall specify-cli
+   uv tool uninstall course-specify
    # or
-   pip uninstall specify-cli
+   pip uninstall course-specify
    ```
 
 2. **Install the Node.js version:**

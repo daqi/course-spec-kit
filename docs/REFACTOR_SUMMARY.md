@@ -133,9 +133,9 @@ npx git+https://github.com/daqi/course-spec-kit.git init <project-name>
 
 For existing Python users:
 
-1. Uninstall Python version: `uv tool uninstall specify-cli`
+1. Uninstall Python version: `uv tool uninstall course-specify`
 2. Install npm version: `npm install -g git+https://github.com/daqi/course-spec-kit.git`
-3. Verify: `specify --version` (should show 0.0.21)
+3. Verify: `course-specify --version` (should show 0.0.24)
 
 See `docs/MIGRATION.md` for complete migration instructions.
 

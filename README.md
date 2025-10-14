@@ -64,7 +64,7 @@ course-specify check
 To upgrade course-specify run:
 
 ```bash
-npm update -g specify-cli
+npm update -g course-specify
 ```
 
 #### Option 2: NPX One-time Usage

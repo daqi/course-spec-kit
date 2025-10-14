@@ -23,7 +23,7 @@ export async function fetchLatestRelease(githubToken?: string): Promise<GitHubRe
   const url = `https://api.github.com/repos/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}/releases/latest`;
   const headers = {
     ...getGitHubAuthHeaders(githubToken),
-    "User-Agent": "specify-cli",
+    "User-Agent": "course-specify",
   };
 
   const response = await fetch(url, { headers });
@@ -56,7 +56,7 @@ export async function downloadTemplate(
   const zipPath = path.join(downloadDir, assetName);
   const headers = {
     ...getGitHubAuthHeaders(githubToken),
-    "User-Agent": "specify-cli",
+    "User-Agent": "course-specify",
   };
 
   const response = await fetch(asset.browser_download_url, { headers });
