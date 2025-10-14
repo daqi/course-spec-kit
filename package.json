@@ -1,0 +1,40 @@
+{
+  "name": "specify-cli",
+  "version": "0.0.21",
+  "description": "Course Specify CLI, part of Course Spec Kit. A tool to bootstrap your course projects for Spec-Driven Course Development (SDD).",
+  "type": "module",
+  "bin": {
+    "specify": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "cli",
+    "course-design",
+    "spec-driven-development",
+    "education",
+    "ai-agents"
+  ],
+  "author": "Course Spec Kit Contributors",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^5.5.0",
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "extract-zip": "^2.0.1",
+    "ora": "^8.1.0",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/extract-zip": "^2.0.1",
+    "@types/node": "^20.14.0",
+    "typescript": "^5.5.0"
+  }
+}

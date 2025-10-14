@@ -46,12 +46,12 @@ Spec-Driven Development **flips the script** on traditional course development. 
 
 Choose your preferred installation method:
 
-#### Option 1: Persistent Installation (Recommended)
+#### Option 1: NPM Global Installation (Recommended)
 
-Install once and use everywhere:
+Install once and use everywhere using npm:
 
 ```bash
-uv tool install specify-cli --from git+https://github.com/daqi/course-spec-kit.git
+npm install -g git+https://github.com/daqi/course-spec-kit.git
 ```
 
 Then use the tool directly:
@@ -64,23 +64,32 @@ specify check
 To upgrade specify run:
 
 ```bash
-uv tool install specify-cli --force --from git+https://github.com/daqi/course-spec-kit.git
+npm update -g specify-cli
 ```
 
-#### Option 2: One-time Usage
+#### Option 2: NPX One-time Usage
 
 Run directly without installing:
 
 ```bash
-uvx --from git+https://github.com/daqi/course-spec-kit.git specify init <COURSE_PROJECT_NAME>
+npx git+https://github.com/daqi/course-spec-kit.git init <COURSE_PROJECT_NAME>
 ```
 
-**Benefits of persistent installation:**
+#### Option 3: Python (Legacy - Deprecated)
 
+> **Note:** The Python version is deprecated. Please use the npm version above.
+
+```bash
+uv tool install specify-cli --from git+https://github.com/daqi/course-spec-kit.git
+```
+
+**Benefits of npm installation:**
+
+- Modern JavaScript/TypeScript toolchain with better cross-platform support
+- Faster startup and execution
+- Better dependency management
 - Tool stays installed and available in PATH
-- No need to create shell aliases
-- Better tool management with `uv tool list`, `uv tool upgrade`, `uv tool uninstall`
-- Cleaner shell configuration
+- Compatible with all major operating systems
 
 ### 2. Establish course principles
 
@@ -292,11 +301,11 @@ Our research and experimentation focus on:
 
 ## 🔧 Prerequisites
 
-- **Linux/macOS** (or WSL2 on Windows)
+- **Node.js 18.0.0 or higher** - [Download Node.js](https://nodejs.org/)
+- **Git** - [Download Git](https://git-scm.com/downloads)
 - AI coding agent: [Claude Code](https://www.anthropic.com/claude-code), [GitHub Copilot](https://code.visualstudio.com/), [Gemini CLI](https://github.com/google-gemini/gemini-cli), [Cursor](https://cursor.sh/), [Qwen CLI](https://github.com/QwenLM/qwen-code), [opencode](https://opencode.ai/), [Codex CLI](https://github.com/openai/codex), [Windsurf](https://windsurf.com/), or [Amazon Q Developer CLI](https://aws.amazon.com/developer/learning/q-developer-cli/)
-- [uv](https://docs.astral.sh/uv/) for package management
-- [Python 3.11+](https://www.python.org/downloads/)
-- [Git](https://git-scm.com/downloads)
+
+**Note:** The Python version (requiring Python 3.11+ and uv) is deprecated. Please use the npm version instead.
 
 If you encounter issues with an agent, please open an issue so we can refine the integration.
 

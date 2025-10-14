@@ -12,7 +12,11 @@
 """
 Specify CLI - Setup tool for Specify course projects
 
-Usage:
+DEPRECATED: This Python version is deprecated as of v0.0.21.
+Please use the Node.js/TypeScript version instead:
+    npm install -g git+https://github.com/daqi/course-spec-kit.git
+
+Legacy Usage (Python - Deprecated):
     uvx specify-cli.py init <course-project-name>
     uvx specify-cli.py init .
     uvx specify-cli.py init --here
@@ -22,6 +26,8 @@ Or install globally:
     specify init <course-project-name>
     specify init .
     specify init --here
+
+Migration Guide: See docs/MIGRATION.md
 """
 
 import os
@@ -376,6 +382,19 @@ def show_banner():
 @app.callback()
 def callback(ctx: typer.Context):
     """Show banner when no subcommand is provided."""
+    # Show deprecation warning
+    console.print()
+    console.print(Panel(
+        "[yellow]⚠️  DEPRECATION WARNING[/yellow]\n\n"
+        "This Python version of the Specify CLI is deprecated as of v0.0.21.\n"
+        "Please migrate to the Node.js/TypeScript version:\n\n"
+        "[cyan]npm install -g git+https://github.com/daqi/course-spec-kit.git[/cyan]\n\n"
+        "See docs/MIGRATION.md for migration guide.",
+        border_style="yellow",
+        title="[bold yellow]Deprecated[/bold yellow]",
+    ))
+    console.print()
+    
     if ctx.invoked_subcommand is None and "--help" not in sys.argv and "-h" not in sys.argv:
         show_banner()
         console.print(Align.center("[dim]Run 'specify --help' for usage information[/dim]"))
