@@ -4,14 +4,13 @@ import fs from "fs/promises";
 import path from "path";
 import ora from "ora";
 import { AGENT_CONFIG } from "../config.js";
-import { selectAIAssistant, selectScriptType } from "./check.js";
+import { selectAIAssistant } from "./check.js";
 import { downloadAndExtractTemplate } from "../utils/download.js";
-import { checkTool, isGitRepo, initGitRepo, ensureExecutableScripts } from "../utils/system.js";
+import { checkTool, isGitRepo, initGitRepo } from "../utils/system.js";
 import { StepTracker } from "../utils/tracker.js";
 
 export interface InitOptions {
   ai?: string;
-  script?: string;
   ignoreAgentTools?: boolean;
   noGit?: boolean;
   here?: boolean;
@@ -75,12 +74,10 @@ export async function initCommand(
     }
   }
 
-  // Select AI assistant and script type
+  // Select AI assistant (no longer need script type)
   const selectedAi = await selectAIAssistant(options.ai);
-  const selectedScript = await selectScriptType(options.script);
 
   console.log(chalk.cyan(`Selected AI assistant: ${selectedAi}`));
-  console.log(chalk.cyan(`Selected script type: ${selectedScript}`));
 
   // Check for agent CLI tools if needed
   if (!options.ignoreAgentTools) {
@@ -110,33 +107,24 @@ export async function initCommand(
   tracker.add("ai-select", "Select AI assistant");
   tracker.complete("ai-select", selectedAi);
 
-  tracker.add("script-select", "Select script type");
-  tracker.complete("script-select", selectedScript);
-
   tracker.add("fetch", "Fetch latest release");
   tracker.add("download", "Download template");
   tracker.add("extract", "Extract template");
-  tracker.add("chmod", "Ensure scripts executable");
   tracker.add("git", "Initialize git repository");
   tracker.add("cleanup", "Cleanup");
   tracker.add("final", "Finalize");
 
   try {
-    // Download and extract template
+    // Download and extract template (no script type needed)
     tracker.start("fetch");
     tracker.start("download");
     tracker.start("extract");
 
-    await downloadAndExtractTemplate(projectPath, selectedAi, selectedScript, options.githubToken);
+    await downloadAndExtractTemplate(projectPath, selectedAi, options.githubToken);
 
     tracker.complete("fetch", "ok");
     tracker.complete("download", "ok");
     tracker.complete("extract", "ok");
-
-    // Ensure scripts are executable
-    tracker.start("chmod");
-    await ensureExecutableScripts(projectPath);
-    tracker.complete("chmod", "ok");
 
     // Initialize git repository
     if (!options.noGit) {

@@ -1,11 +1,7 @@
 ---
 description: Execute the instructional planning workflow using the plan template to generate instructional design artifacts.
-scripts:
-  sh: scripts/bash/setup-plan.sh --json
-  ps: scripts/powershell/setup-plan.ps1 -Json
-agent_scripts:
-  sh: scripts/bash/update-agent-context.sh __AGENT__
-  ps: scripts/powershell/update-agent-context.ps1 -AgentType __AGENT__
+script: node .specify/scripts/setup-plan.js --json
+agent_script: node .specify/scripts/update-agent-context.js __AGENT__
 ---
 
 ## User Input

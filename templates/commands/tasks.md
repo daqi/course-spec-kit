@@ -1,8 +1,6 @@
 ---
 description: Generate an actionable, dependency-ordered tasks.md for the learning module based on available instructional design artifacts.
-scripts:
-  sh: scripts/bash/check-prerequisites.sh --json
-  ps: scripts/powershell/check-prerequisites.ps1 -Json
+script: node .specify/scripts/check-prerequisites.js --json
 ---
 
 ## User Input

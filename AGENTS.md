@@ -12,7 +12,9 @@ The toolkit supports multiple AI coding assistants, allowing teams to use their 
 
 ## General practices
 
-- Any changes to `__init__.py` for the Specify CLI require a version rev in `pyproject.toml` and addition of entries to `CHANGELOG.md`.
+- Any changes to the Specify CLI require a version rev in `package.json` and addition of entries to `CHANGELOG.md`.
+- Scripts are now unified in Node.js (TypeScript compiled to JavaScript) located in `src-js/scripts/`. The old bash and PowerShell scripts in `scripts/bash/` and `scripts/powershell/` are deprecated.
+- Template commands now reference unified Node.js scripts: `node .specify/scripts/<script-name>.js`
 
 ## Adding New Agent Support
 
@@ -113,66 +115,33 @@ case $agent in
   # ... existing cases ...
   windsurf)
     mkdir -p "$base_dir/.windsurf/workflows"
-    generate_commands windsurf md "\$ARGUMENTS" "$base_dir/.windsurf/workflows" "$script" ;;
+    generate_commands windsurf md "\$ARGUMENTS" "$base_dir/.windsurf/workflows" ;;
 esac
 ```
 
-#### 4. Update GitHub Release Script
+**Note**: Scripts are now unified to Node.js, so there's no need to specify script variant (sh/ps). The `generate_commands` function no longer takes a script variant parameter.
 
-Modify `.github/workflows/scripts/create-github-release.sh` to include the new agent's packages:
+#### 5. Update GitHub Release Script
+
+Modify `.github/workflows/scripts/create-github-release.sh` to include the new agent's package:
 
 ```bash
 gh release create "$VERSION" \
   # ... existing packages ...
-  .genreleases/spec-kit-template-windsurf-sh-"$VERSION".zip \
-  .genreleases/spec-kit-template-windsurf-ps-"$VERSION".zip \
+  .genreleases/spec-kit-template-windsurf-"$VERSION".zip \
   # Add new agent packages here
 ```
 
-#### 5. Update Agent Context Scripts
+#### 5. Update Agent Context Script
 
-##### Bash script (`scripts/bash/update-agent-context.sh`):
+Update `src-js/scripts/update-agent-context.ts` to include the new agent:
 
-Add file variable:
-```bash
-WINDSURF_FILE="$REPO_ROOT/.windsurf/rules/specify-rules.md"
-```
-
-Add to case statement:
-```bash
-case "$AGENT_TYPE" in
-  # ... existing cases ...
-  windsurf) update_agent_file "$WINDSURF_FILE" "Windsurf" ;;
-  "") 
-    # ... existing checks ...
-    [ -f "$WINDSURF_FILE" ] && update_agent_file "$WINDSURF_FILE" "Windsurf";
-    # Update default creation condition
-    ;;
-esac
-```
-
-##### PowerShell script (`scripts/powershell/update-agent-context.ps1`):
-
-Add file variable:
-```powershell
-$windsurfFile = Join-Path $repoRoot '.windsurf/rules/specify-rules.md'
-```
-
-Add to switch statement:
-```powershell
-switch ($AgentType) {
-    # ... existing cases ...
-    'windsurf' { Update-AgentFile $windsurfFile 'Windsurf' }
-    '' {
-        foreach ($pair in @(
-            # ... existing pairs ...
-            @{file=$windsurfFile; name='Windsurf'}
-        )) {
-            if (Test-Path $pair.file) { Update-AgentFile $pair.file $pair.name }
-        }
-        # Update default creation condition
-    }
-}
+Add to AGENT_FILES constant:
+```typescript
+const AGENT_FILES: Record<string, AgentFileConfig> = {
+  // ... existing agents ...
+  windsurf: { path: ".windsurf/rules/specify-rules.md", name: "Windsurf" },
+};
 ```
 
 #### 6. Update CLI Tool Checks (Optional)
