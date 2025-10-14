@@ -2,10 +2,30 @@
 
 <!-- markdownlint-disable MD024 -->
 
-All notable changes to the Specify CLI and templates are documented here.
+All notable changes to the Course Specify CLI and templates are documented here.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [0.0.20] - 2025-10-14
+
+### Changed
+
+- **BREAKING**: Adapted toolkit from general software development to course design and development
+- Updated all branding from "Spec Kit" to "Course Spec Kit"
+- Updated CLI banner to display "COURSE" instead of "SPECIFY"
+- Updated tagline to "Course Spec Kit - Spec-Driven Course Development Toolkit"
+- Updated README.md with course-focused examples and branding
+- Updated spec-driven.md to focus on course development methodology (CRD instead of PRD, learning outcomes instead of requirements)
+- Updated constitution template with course development principles (e.g., Hands-On Learning First, Assessment-First, Accessibility Standards)
+- Updated spec template with course-specific sections (Learning Journeys, Learning Objectives, Student Assessment)
+- Updated all command templates (specify, constitution, plan, tasks, implement) for course context
+- Updated pyproject.toml description for course-specific toolkit
+- Repository URL references updated from github/spec-kit to daqi/course-spec-kit
+
+### Note
+
+This is a fork of github/spec-kit adapted for internet course design and development. The command structure remains identical (`/speckit.constitution`, `/speckit.specify`, `/speckit.plan`, `/speckit.tasks`, `/speckit.implement`) but all content and guidance is adapted for educational contexts.
 
 ## [0.0.19] - 2025-10-10
 
