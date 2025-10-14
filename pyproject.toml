@@ -1,7 +1,7 @@
 [project]
 name = "specify-cli"
-version = "0.0.20"
-description = "Course Specify CLI, part of Course Spec Kit. A tool to bootstrap your course projects for Spec-Driven Course Development (SDD)."
+version = "0.0.21"
+description = "Course Specify CLI, part of Course Spec Kit. A tool to bootstrap your course projects for Spec-Driven Course Development (SDD). [DEPRECATED: Use npm package instead]"
 requires-python = ">=3.11"
 dependencies = [
     "typer",

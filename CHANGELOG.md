@@ -7,6 +7,29 @@ All notable changes to the Course Specify CLI and templates are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.0.21] - 2025-10-14
+
+### Changed
+
+- **BREAKING**: CLI refactored from Python to JavaScript/TypeScript toolchain
+- New Node.js-based CLI using TypeScript for better cross-platform compatibility
+- Improved dependency management with npm instead of Python packages
+- All core functionality maintained: `init` and `check` commands
+- Better interactive prompts using @inquirer/prompts
+- Improved error handling and user feedback
+
+### Added
+
+- TypeScript build system with proper type checking
+- Modern JavaScript/Node.js toolchain (requires Node.js >= 18.0.0)
+- Enhanced CLI output with chalk for better readability
+
+### Migration Notes
+
+- Install with: `npm install -g specify-cli` or use `npx specify-cli`
+- Python version (specify-cli Python package) is deprecated and will be removed in future releases
+- All command-line options and functionality remain identical
+
 ## [0.0.20] - 2025-10-14
 
 ### Changed
