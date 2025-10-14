@@ -1,5 +1,5 @@
 ---
-description: Execute the implementation plan by processing and executing all tasks defined in tasks.md
+description: Execute the course development plan by processing and executing all tasks defined in tasks.md
 scripts:
   sh: scripts/bash/check-prerequisites.sh --json --require-tasks --include-tasks
   ps: scripts/powershell/check-prerequisites.ps1 -Json -RequireTasks -IncludeTasks
@@ -27,9 +27,9 @@ You **MUST** consider the user input before proceeding (if not empty).
      ```
      | Checklist | Total | Completed | Incomplete | Status |
      |-----------|-------|-----------|------------|--------|
-     | ux.md     | 12    | 12        | 0          | ✓ PASS |
-     | test.md   | 8     | 5         | 3          | ✗ FAIL |
-     | security.md | 6   | 6         | 0          | ✓ PASS |
+     | accessibility.md | 12 | 12 | 0       | ✓ PASS |
+     | assessment.md | 8  | 5  | 3          | ✗ FAIL |
+     | engagement.md | 6  | 6  | 0          | ✓ PASS |
      ```
    - Calculate overall status:
      * **PASS**: All checklists have 0 incomplete items
@@ -37,7 +37,7 @@ You **MUST** consider the user input before proceeding (if not empty).
    
    - **If any checklist is incomplete**:
      * Display the table with incomplete item counts
-     * **STOP** and ask: "Some checklists are incomplete. Do you want to proceed with implementation anyway? (yes/no)"
+     * **STOP** and ask: "Some checklists are incomplete. Do you want to proceed with course development anyway? (yes/no)"
      * Wait for user response before continuing
      * If user says "no" or "wait" or "stop", halt execution
      * If user says "yes" or "proceed" or "continue", proceed to step 3
@@ -46,13 +46,13 @@ You **MUST** consider the user input before proceeding (if not empty).
      * Display the table showing all checklists passed
      * Automatically proceed to step 3
 
-3. Load and analyze the implementation context:
+3. Load and analyze the instructional context:
    - **REQUIRED**: Read tasks.md for the complete task list and execution plan
-   - **REQUIRED**: Read plan.md for tech stack, architecture, and file structure
-   - **IF EXISTS**: Read data-model.md for entities and relationships
-   - **IF EXISTS**: Read contracts/ for API specifications and test requirements
-   - **IF EXISTS**: Read research.md for technical decisions and constraints
-   - **IF EXISTS**: Read quickstart.md for integration scenarios
+   - **REQUIRED**: Read plan.md for delivery approach, technologies, and content structure
+   - **IF EXISTS**: Read learning-model.md for concepts and relationships
+   - **IF EXISTS**: Read assessments/ for assessment specifications and rubrics
+   - **IF EXISTS**: Read research.md for pedagogical decisions and constraints
+   - **IF EXISTS**: Read lesson-plan.md for teaching scenarios
 
 4. **Project Setup Verification**:
    - **REQUIRED**: Create/verify ignore files based on actual project setup:

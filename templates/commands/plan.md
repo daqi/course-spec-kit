@@ -1,5 +1,5 @@
 ---
-description: Execute the implementation planning workflow using the plan template to generate design artifacts.
+description: Execute the instructional planning workflow using the plan template to generate instructional design artifacts.
 scripts:
   sh: scripts/bash/setup-plan.sh --json
   ps: scripts/powershell/setup-plan.ps1 -Json
@@ -23,11 +23,11 @@ You **MUST** consider the user input before proceeding (if not empty).
 2. **Load context**: Read FEATURE_SPEC and `/memory/constitution.md`. Load IMPL_PLAN template (already copied).
 
 3. **Execute plan workflow**: Follow the structure in IMPL_PLAN template to:
-   - Fill Technical Context (mark unknowns as "NEEDS CLARIFICATION")
+   - Fill Instructional Context (mark unknowns as "NEEDS CLARIFICATION")
    - Fill Constitution Check section from constitution
    - Evaluate gates (ERROR if violations unjustified)
    - Phase 0: Generate research.md (resolve all NEEDS CLARIFICATION)
-   - Phase 1: Generate data-model.md, contracts/, quickstart.md
+   - Phase 1: Generate learning-model.md, assessments/, lesson-plan.md
    - Phase 1: Update agent context by running the agent script
    - Re-evaluate Constitution Check post-design
 
@@ -37,17 +37,17 @@ You **MUST** consider the user input before proceeding (if not empty).
 
 ### Phase 0: Outline & Research
 
-1. **Extract unknowns from Technical Context** above:
+1. **Extract unknowns from Instructional Context** above:
    - For each NEEDS CLARIFICATION → research task
-   - For each dependency → best practices task
-   - For each integration → patterns task
+   - For each pedagogical dependency → best practices task
+   - For each content integration → patterns task
 
 2. **Generate and dispatch research agents**:
    ```
-   For each unknown in Technical Context:
-     Task: "Research {unknown} for {feature context}"
-   For each technology choice:
-     Task: "Find best practices for {tech} in {domain}"
+   For each unknown in Instructional Context:
+     Task: "Research {unknown} for {module context}"
+   For each delivery technology choice:
+     Task: "Find best practices for {tech} in {learning domain}"
    ```
 
 3. **Consolidate findings** in `research.md` using format:
@@ -57,28 +57,28 @@ You **MUST** consider the user input before proceeding (if not empty).
 
 **Output**: research.md with all NEEDS CLARIFICATION resolved
 
-### Phase 1: Design & Contracts
+### Phase 1: Design & Assessments
 
 **Prerequisites:** `research.md` complete
 
-1. **Extract entities from feature spec** → `data-model.md`:
-   - Entity name, fields, relationships
-   - Validation rules from requirements
-   - State transitions if applicable
+1. **Extract learning concepts from module spec** → `learning-model.md`:
+   - Concept name, key components, relationships
+   - Prerequisite knowledge from objectives
+   - Learning progression if applicable
 
-2. **Generate API contracts** from functional requirements:
-   - For each user action → endpoint
-   - Use standard REST/GraphQL patterns
-   - Output OpenAPI/GraphQL schema to `/contracts/`
+2. **Generate assessment instruments** from learning objectives:
+   - For each student journey → assessment activity
+   - Use standard formative/summative patterns
+   - Output assessment rubrics/templates to `/assessments/`
 
 3. **Agent context update**:
    - Run `{AGENT_SCRIPT}`
    - These scripts detect which AI agent is in use
    - Update the appropriate agent-specific context file
-   - Add only new technology from current plan
+   - Add only new delivery technology from current plan
    - Preserve manual additions between markers
 
-**Output**: data-model.md, /contracts/*, quickstart.md, agent-specific file
+**Output**: learning-model.md, /assessments/*, lesson-plan.md, agent-specific file
 
 ## Key rules
 

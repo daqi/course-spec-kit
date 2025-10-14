@@ -1,115 +1,115 @@
-# Feature Specification: [FEATURE NAME]
+# Learning Module Specification: [MODULE NAME]
 
-**Feature Branch**: `[###-feature-name]`  
+**Module Branch**: `[###-module-name]`  
 **Created**: [DATE]  
 **Status**: Draft  
-**Input**: User description: "$ARGUMENTS"
+**Input**: Instructor description: "$ARGUMENTS"
 
-## User Scenarios & Testing *(mandatory)*
+## Student Learning Journeys & Assessment *(mandatory)*
 
 <!--
-  IMPORTANT: User stories should be PRIORITIZED as user journeys ordered by importance.
-  Each user story/journey must be INDEPENDENTLY TESTABLE - meaning if you implement just ONE of them,
-  you should still have a viable MVP (Minimum Viable Product) that delivers value.
+  IMPORTANT: Student journeys should be PRIORITIZED as learning paths ordered by importance.
+  Each learning journey must be INDEPENDENTLY ASSESSABLE - meaning if you implement just ONE of them,
+  you should still have a viable minimum learning module that delivers value.
   
-  Assign priorities (P1, P2, P3, etc.) to each story, where P1 is the most critical.
-  Think of each story as a standalone slice of functionality that can be:
-  - Developed independently
-  - Tested independently
-  - Deployed independently
-  - Demonstrated to users independently
+  Assign priorities (P1, P2, P3, etc.) to each journey, where P1 is the most critical.
+  Think of each journey as a standalone slice of learning that can be:
+  - Taught independently
+  - Assessed independently
+  - Delivered independently
+  - Demonstrated to students independently
 -->
 
-### User Story 1 - [Brief Title] (Priority: P1)
+### Learning Journey 1 - [Brief Title] (Priority: P1)
 
-[Describe this user journey in plain language]
+[Describe this learning journey in plain language - what students will learn and why]
 
-**Why this priority**: [Explain the value and why it has this priority level]
+**Why this priority**: [Explain the learning value and why it has this priority level]
 
-**Independent Test**: [Describe how this can be tested independently - e.g., "Can be fully tested by [specific action] and delivers [specific value]"]
+**Independent Assessment**: [Describe how this can be assessed independently - e.g., "Can be fully assessed by [specific exercise/project] and delivers [specific skill/knowledge]"]
 
-**Acceptance Scenarios**:
+**Assessment Scenarios**:
 
-1. **Given** [initial state], **When** [action], **Then** [expected outcome]
-2. **Given** [initial state], **When** [action], **Then** [expected outcome]
-
----
-
-### User Story 2 - [Brief Title] (Priority: P2)
-
-[Describe this user journey in plain language]
-
-**Why this priority**: [Explain the value and why it has this priority level]
-
-**Independent Test**: [Describe how this can be tested independently]
-
-**Acceptance Scenarios**:
-
-1. **Given** [initial state], **When** [action], **Then** [expected outcome]
+1. **Given** [student knowledge state], **When** [learning activity], **Then** [expected outcome/skill demonstrated]
+2. **Given** [student knowledge state], **When** [learning activity], **Then** [expected outcome/skill demonstrated]
 
 ---
 
-### User Story 3 - [Brief Title] (Priority: P3)
+### Learning Journey 2 - [Brief Title] (Priority: P2)
 
-[Describe this user journey in plain language]
+[Describe this learning journey in plain language]
 
-**Why this priority**: [Explain the value and why it has this priority level]
+**Why this priority**: [Explain the learning value and why it has this priority level]
 
-**Independent Test**: [Describe how this can be tested independently]
+**Independent Assessment**: [Describe how this can be assessed independently]
 
-**Acceptance Scenarios**:
+**Assessment Scenarios**:
 
-1. **Given** [initial state], **When** [action], **Then** [expected outcome]
+1. **Given** [student knowledge state], **When** [learning activity], **Then** [expected outcome/skill demonstrated]
 
 ---
 
-[Add more user stories as needed, each with an assigned priority]
+### Learning Journey 3 - [Brief Title] (Priority: P3)
+
+[Describe this learning journey in plain language]
+
+**Why this priority**: [Explain the learning value and why it has this priority level]
+
+**Independent Assessment**: [Describe how this can be assessed independently]
+
+**Assessment Scenarios**:
+
+1. **Given** [student knowledge state], **When** [learning activity], **Then** [expected outcome/skill demonstrated]
+
+---
+
+[Add more learning journeys as needed, each with an assigned priority]
 
 ### Edge Cases
 
 <!--
   ACTION REQUIRED: The content in this section represents placeholders.
-  Fill them out with the right edge cases.
+  Fill them out with the right edge cases for learning.
 -->
 
-- What happens when [boundary condition]?
-- How does system handle [error scenario]?
+- What happens when [diverse learner needs]?
+- How does module handle [prerequisite knowledge gaps]?
 
-## Requirements *(mandatory)*
+## Learning Objectives *(mandatory)*
 
 <!--
   ACTION REQUIRED: The content in this section represents placeholders.
-  Fill them out with the right functional requirements.
+  Fill them out with the right learning objectives.
 -->
 
-### Functional Requirements
+### Learning Outcomes
 
-- **FR-001**: System MUST [specific capability, e.g., "allow users to create accounts"]
-- **FR-002**: System MUST [specific capability, e.g., "validate email addresses"]  
-- **FR-003**: Users MUST be able to [key interaction, e.g., "reset their password"]
-- **FR-004**: System MUST [data requirement, e.g., "persist user preferences"]
-- **FR-005**: System MUST [behavior, e.g., "log all security events"]
+- **LO-001**: Students MUST be able to [specific skill/knowledge, e.g., "create interactive web pages with JavaScript"]
+- **LO-002**: Students MUST be able to [specific skill/knowledge, e.g., "manipulate the DOM using vanilla JavaScript"]  
+- **LO-003**: Students MUST be able to [key competency, e.g., "handle asynchronous operations with promises"]
+- **LO-004**: Students MUST understand [concept, e.g., "event-driven programming principles"]
+- **LO-005**: Students MUST demonstrate [skill, e.g., "debugging JavaScript code using browser dev tools"]
 
-*Example of marking unclear requirements:*
+*Example of marking unclear objectives:*
 
-- **FR-006**: System MUST authenticate users via [NEEDS CLARIFICATION: auth method not specified - email/password, SSO, OAuth?]
-- **FR-007**: System MUST retain user data for [NEEDS CLARIFICATION: retention period not specified]
+- **LO-006**: Students MUST learn [NEEDS CLARIFICATION: proficiency level not specified - basic understanding, intermediate application, or advanced mastery?]
+- **LO-007**: Students MUST complete [NEEDS CLARIFICATION: number of practice exercises not specified]
 
-### Key Entities *(include if feature involves data)*
+### Key Concepts *(include if module involves specific topics)*
 
-- **[Entity 1]**: [What it represents, key attributes without implementation]
-- **[Entity 2]**: [What it represents, relationships to other entities]
+- **[Concept 1]**: [What it represents, key aspects without implementation details]
+- **[Concept 2]**: [What it represents, relationships to other concepts]
 
 ## Success Criteria *(mandatory)*
 
 <!--
   ACTION REQUIRED: Define measurable success criteria.
-  These must be technology-agnostic and measurable.
+  These must be learner-focused and measurable.
 -->
 
 ### Measurable Outcomes
 
-- **SC-001**: [Measurable metric, e.g., "Users can complete account creation in under 2 minutes"]
-- **SC-002**: [Measurable metric, e.g., "System handles 1000 concurrent users without degradation"]
-- **SC-003**: [User satisfaction metric, e.g., "90% of users successfully complete primary task on first attempt"]
-- **SC-004**: [Business metric, e.g., "Reduce support tickets related to [X] by 50%"]
+- **SC-001**: [Measurable metric, e.g., "Students can complete a basic interactive web app in under 60 minutes"]
+- **SC-002**: [Measurable metric, e.g., "90% of students successfully complete the module assessment on first attempt"]
+- **SC-003**: [Student satisfaction metric, e.g., "85% of students report feeling confident applying concepts on their own"]
+- **SC-004**: [Learning metric, e.g., "Students demonstrate understanding through peer code review participation"]

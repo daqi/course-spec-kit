@@ -1,5 +1,5 @@
 ---
-description: Create or update the feature specification from a natural language feature description.
+description: Create or update the learning module specification from a natural language module description.
 scripts:
   sh: scripts/bash/create-new-feature.sh --json "{ARGS}"
   ps: scripts/powershell/create-new-feature.ps1 -Json "{ARGS}"
@@ -15,9 +15,9 @@ You **MUST** consider the user input before proceeding (if not empty).
 
 ## Outline
 
-The text the user typed after `/speckit.specify` in the triggering message **is** the feature description. Assume you always have it available in this conversation even if `{ARGS}` appears literally below. Do not ask the user to repeat it unless they provided an empty command.
+The text the user typed after `/speckit.specify` in the triggering message **is** the learning module description. Assume you always have it available in this conversation even if `{ARGS}` appears literally below. Do not ask the user to repeat it unless they provided an empty command.
 
-Given that feature description, do this:
+Given that module description, do this:
 
 1. Run the script `{SCRIPT}` from repo root and parse its JSON output for BRANCH_NAME and SPEC_FILE. All file paths must be absolute.
   **IMPORTANT** You must only ever run this script once. The JSON is provided in the terminal as output - always refer to it to get the actual content you're looking for. For single quotes in args like "I'm Groot", use escape syntax: e.g 'I'\''m Groot' (or double-quote if possible: "I'm Groot").
@@ -26,65 +26,65 @@ Given that feature description, do this:
 3. Follow this execution flow:
 
     1. Parse user description from Input
-       If empty: ERROR "No feature description provided"
-    2. Extract key concepts from description
-       Identify: actors, actions, data, constraints
+       If empty: ERROR "No module description provided"
+    2. Extract key learning concepts from description
+       Identify: learners, learning activities, knowledge/skills, constraints
     3. For unclear aspects:
-       - Make informed guesses based on context and industry standards
+       - Make informed guesses based on context and pedagogical best practices
        - Only mark with [NEEDS CLARIFICATION: specific question] if:
-         - The choice significantly impacts feature scope or user experience
+         - The choice significantly impacts module scope or learning outcomes
          - Multiple reasonable interpretations exist with different implications
          - No reasonable default exists
        - **LIMIT: Maximum 3 [NEEDS CLARIFICATION] markers total**
-       - Prioritize clarifications by impact: scope > security/privacy > user experience > technical details
-    4. Fill User Scenarios & Testing section
-       If no clear user flow: ERROR "Cannot determine user scenarios"
-    5. Generate Functional Requirements
-       Each requirement must be testable
+       - Prioritize clarifications by impact: scope > accessibility/inclusivity > learning experience > technical details
+    4. Fill Student Learning Journeys & Assessment section
+       If no clear learning flow: ERROR "Cannot determine learning journeys"
+    5. Generate Learning Objectives
+       Each objective must be assessable
        Use reasonable defaults for unspecified details (document assumptions in Assumptions section)
     6. Define Success Criteria
        Create measurable, technology-agnostic outcomes
-       Include both quantitative metrics (time, performance, volume) and qualitative measures (user satisfaction, task completion)
+       Include both quantitative metrics (completion time, performance, volume) and qualitative measures (student satisfaction, skill demonstration)
        Each criterion must be verifiable without implementation details
-    7. Identify Key Entities (if data involved)
+    7. Identify Key Concepts (if topic-specific knowledge involved)
     8. Return: SUCCESS (spec ready for planning)
 
-4. Write the specification to SPEC_FILE using the template structure, replacing placeholders with concrete details derived from the feature description (arguments) while preserving section order and headings.
+4. Write the specification to SPEC_FILE using the template structure, replacing placeholders with concrete details derived from the module description (arguments) while preserving section order and headings.
 
 5. **Specification Quality Validation**: After writing the initial spec, validate it against quality criteria:
 
    a. **Create Spec Quality Checklist**: Generate a checklist file at `FEATURE_DIR/checklists/requirements.md` using the checklist template structure with these validation items:
    
       ```markdown
-      # Specification Quality Checklist: [FEATURE NAME]
+      # Specification Quality Checklist: [MODULE NAME]
       
       **Purpose**: Validate specification completeness and quality before proceeding to planning
       **Created**: [DATE]
-      **Feature**: [Link to spec.md]
+      **Module**: [Link to spec.md]
       
       ## Content Quality
       
-      - [ ] No implementation details (languages, frameworks, APIs)
-      - [ ] Focused on user value and business needs
-      - [ ] Written for non-technical stakeholders
+      - [ ] No implementation details (specific technologies, LMS platforms, authoring tools)
+      - [ ] Focused on learning outcomes and student needs
+      - [ ] Written for educational stakeholders (instructors, designers)
       - [ ] All mandatory sections completed
       
-      ## Requirement Completeness
+      ## Learning Objective Completeness
       
       - [ ] No [NEEDS CLARIFICATION] markers remain
-      - [ ] Requirements are testable and unambiguous
+      - [ ] Learning objectives are assessable and unambiguous
       - [ ] Success criteria are measurable
       - [ ] Success criteria are technology-agnostic (no implementation details)
-      - [ ] All acceptance scenarios are defined
-      - [ ] Edge cases are identified
+      - [ ] All assessment scenarios are defined
+      - [ ] Edge cases are identified (diverse learners, prerequisites)
       - [ ] Scope is clearly bounded
       - [ ] Dependencies and assumptions identified
       
-      ## Feature Readiness
+      ## Module Readiness
       
-      - [ ] All functional requirements have clear acceptance criteria
-      - [ ] User scenarios cover primary flows
-      - [ ] Feature meets measurable outcomes defined in Success Criteria
+      - [ ] All learning objectives have clear assessment criteria
+      - [ ] Student learning journeys cover primary flows
+      - [ ] Module meets measurable outcomes defined in Success Criteria
       - [ ] No implementation details leak into specification
       
       ## Notes
@@ -151,61 +151,61 @@ Given that feature description, do this:
 
 ## Quick Guidelines
 
-- Focus on **WHAT** users need and **WHY**.
-- Avoid HOW to implement (no tech stack, APIs, code structure).
-- Written for business stakeholders, not developers.
+- Focus on **WHAT** students will learn and **WHY**.
+- Avoid HOW to teach (no specific LMS, authoring tools, delivery platforms).
+- Written for educational stakeholders, not technology specialists.
 - DO NOT create any checklists that are embedded in the spec. That will be a separate command.
 
 ### Section Requirements
 
-- **Mandatory sections**: Must be completed for every feature
-- **Optional sections**: Include only when relevant to the feature
+- **Mandatory sections**: Must be completed for every learning module
+- **Optional sections**: Include only when relevant to the module
 - When a section doesn't apply, remove it entirely (don't leave as "N/A")
 
 ### For AI Generation
 
 When creating this spec from a user prompt:
 
-1. **Make informed guesses**: Use context, industry standards, and common patterns to fill gaps
+1. **Make informed guesses**: Use context, pedagogical best practices, and common patterns to fill gaps
 2. **Document assumptions**: Record reasonable defaults in the Assumptions section
 3. **Limit clarifications**: Maximum 3 [NEEDS CLARIFICATION] markers - use only for critical decisions that:
-   - Significantly impact feature scope or user experience
+   - Significantly impact module scope or learning outcomes
    - Have multiple reasonable interpretations with different implications
    - Lack any reasonable default
-4. **Prioritize clarifications**: scope > security/privacy > user experience > technical details
-5. **Think like a tester**: Every vague requirement should fail the "testable and unambiguous" checklist item
+4. **Prioritize clarifications**: scope > accessibility/inclusivity > learning experience > technical details
+5. **Think like an assessor**: Every vague objective should fail the "assessable and unambiguous" checklist item
 6. **Common areas needing clarification** (only if no reasonable default exists):
-   - Feature scope and boundaries (include/exclude specific use cases)
-   - User types and permissions (if multiple conflicting interpretations possible)
-   - Security/compliance requirements (when legally/financially significant)
+   - Module scope and boundaries (include/exclude specific topics)
+   - Learner prerequisites and levels (if multiple conflicting interpretations possible)
+   - Accessibility/compliance requirements (when legally/institutionally significant)
    
 **Examples of reasonable defaults** (don't ask about these):
 
-- Data retention: Industry-standard practices for the domain
-- Performance targets: Standard web/mobile app expectations unless specified
-- Error handling: User-friendly messages with appropriate fallbacks
-- Authentication method: Standard session-based or OAuth2 for web apps
-- Integration patterns: RESTful APIs unless specified otherwise
+- Student prerequisites: Basic computer literacy and internet access unless specified
+- Completion time: Standard online module expectations (1-3 hours) unless specified
+- Assessment approach: Formative and summative assessments with clear rubrics
+- Delivery method: Self-paced online learning with instructor support
+- Content format: Mixed media (text, video, interactive exercises) unless specified otherwise
 
 ### Success Criteria Guidelines
 
 Success criteria must be:
 
 1. **Measurable**: Include specific metrics (time, percentage, count, rate)
-2. **Technology-agnostic**: No mention of frameworks, languages, databases, or tools
-3. **User-focused**: Describe outcomes from user/business perspective, not system internals
-4. **Verifiable**: Can be tested/validated without knowing implementation details
+2. **Technology-agnostic**: No mention of specific LMS, authoring tools, or platforms
+3. **Learner-focused**: Describe outcomes from student/learning perspective, not system internals
+4. **Verifiable**: Can be assessed/validated without knowing implementation details
 
 **Good examples**:
 
-- "Users can complete checkout in under 3 minutes"
-- "System supports 10,000 concurrent users"
-- "95% of searches return results in under 1 second"
-- "Task completion rate improves by 40%"
+- "Students can complete the module assessment in under 45 minutes"
+- "Module supports 200 concurrent learners without performance degradation"
+- "90% of students demonstrate mastery on first assessment attempt"
+- "Student engagement rate improves by 35%"
 
 **Bad examples** (implementation-focused):
 
-- "API response time is under 200ms" (too technical, use "Users see results instantly")
-- "Database can handle 1000 TPS" (implementation detail, use user-facing metric)
-- "React components render efficiently" (framework-specific)
-- "Redis cache hit rate above 80%" (technology-specific)
+- "LMS API response time is under 200ms" (too technical, use "Students see instant feedback")
+- "Database can handle 1000 quiz submissions per second" (implementation detail, use learner-facing metric)
+- "React components for exercises render efficiently" (framework-specific)
+- "Video CDN cache hit rate above 80%" (technology-specific)
