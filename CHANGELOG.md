@@ -11,12 +11,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- **BREAKING**: Command prefix changed from `/speckit.` to `/course.`
-- All slash commands now use `/course.` prefix (e.g., `/course.constitution`, `/course.specify`, `/course.plan`, `/course.tasks`, `/course.implement`)
-- Updated all documentation and templates to reflect new command prefix
+- **BREAKING**: npm package name changed from `specify-cli` to `course-specify`
+- Updated User-Agent in GitHub API requests from `specify-cli` to `course-specify`
 
 ### Migration Notes
 
+- If you have the CLI installed globally, reinstall with: `npm install -g course-specify` (when published to npm) or `npm install -g git+https://github.com/daqi/course-spec-kit.git`
+- The command name remains `course-specify` (no change from v0.0.22)
+- All functionality remains identical, only the package name has changed
+- **BREAKING**: Command prefix changed from `/speckit.` to `/course.`
+- All slash commands now use `/course.` prefix (e.g., `/course.constitution`, `/course.specify`, `/course.plan`, `/course.tasks`, `/course.implement`)
+- Updated all documentation and templates to reflect new command prefix
 - If you have existing projects, update your workflow to use the new command prefix:
   - `/speckit.constitution` → `/course.constitution`
   - `/speckit.specify` → `/course.specify`
@@ -76,8 +81,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Migration Notes
 
-- Install with: `npm install -g specify-cli` or use `npx specify-cli`
-- Python version (specify-cli Python package) is deprecated and will be removed in future releases
+- Install with: `npm install -g course-specify` or use `npx course-specify`
+- Python version (course-specify Python package) is deprecated and will be removed in future releases
 - All command-line options and functionality remain identical
 
 ## [0.0.20] - 2025-10-14
