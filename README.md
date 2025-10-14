@@ -77,42 +77,42 @@ npx git+https://github.com/daqi/course-spec-kit.git init <COURSE_PROJECT_NAME>
 
 ### 2. Establish course principles
 
-Use the **`/speckit.constitution`** command to create your course's governing principles and instructional guidelines that will guide all subsequent course development.
+Use the **`/course.constitution`** command to create your course's governing principles and instructional guidelines that will guide all subsequent course development.
 
 ```bash
-/speckit.constitution Create principles focused on learning outcomes, student engagement, accessibility standards, and assessment quality for a JavaScript web development course
+/course.constitution Create principles focused on learning outcomes, student engagement, accessibility standards, and assessment quality for a JavaScript web development course
 ```
 
 ### 3. Create the course spec
 
-Use the **`/speckit.specify`** command to describe the learning module you want to create. Focus on the **what** students will learn and **why**, not the specific technologies.
+Use the **`/course.specify`** command to describe the learning module you want to create. Focus on the **what** students will learn and **why**, not the specific technologies.
 
 ```bash
-/speckit.specify Create a module that teaches students how to build interactive web applications using modern JavaScript. Students should learn asynchronous programming concepts, DOM manipulation, and event handling. By the end, they should be able to create a dynamic task management application with user interactions and data persistence.
+/course.specify Create a module that teaches students how to build interactive web applications using modern JavaScript. Students should learn asynchronous programming concepts, DOM manipulation, and event handling. By the end, they should be able to create a dynamic task management application with user interactions and data persistence.
 ```
 
 ### 4. Create an instructional plan
 
-Use the **`/speckit.plan`** command to provide your course delivery approach and learning technologies.
+Use the **`/course.plan`** command to provide your course delivery approach and learning technologies.
 
 ```bash
-/speckit.plan The course uses interactive coding exercises with vanilla JavaScript, HTML, and CSS. Students will work on hands-on projects using browser-based development environments. Assessment includes coding challenges, project submissions, and peer code reviews.
+/course.plan The course uses interactive coding exercises with vanilla JavaScript, HTML, and CSS. Students will work on hands-on projects using browser-based development environments. Assessment includes coding challenges, project submissions, and peer code reviews.
 ```
 
 ### 5. Break down into learning tasks
 
-Use **`/speckit.tasks`** to create an actionable task list from your instructional plan.
+Use **`/course.tasks`** to create an actionable task list from your instructional plan.
 
 ```bash
-/speckit.tasks
+/course.tasks
 ```
 
 ### 6. Execute course development
 
-Use **`/speckit.implement`** to execute all tasks and build your course module according to the plan.
+Use **`/course.implement`** to execute all tasks and build your course module according to the plan.
 
 ```bash
-/speckit.implement
+/course.implement
 ```
 
 For detailed step-by-step instructions, see our [comprehensive guide](./spec-driven.md).
@@ -218,11 +218,11 @@ Essential commands for the Spec-Driven Course Development workflow:
 
 | Command                  | Description                                                           |
 |--------------------------|-----------------------------------------------------------------------|
-| `/speckit.constitution`  | Create or update course governing principles and instructional guidelines |
-| `/speckit.specify`       | Define the learning module (learning outcomes and student journeys)  |
-| `/speckit.plan`          | Create instructional plans with your chosen delivery approach        |
-| `/speckit.tasks`         | Generate actionable task lists for course development                |
-| `/speckit.implement`     | Execute all tasks to build the course module according to the plan   |
+| `/course.constitution`  | Create or update course governing principles and instructional guidelines |
+| `/course.specify`       | Define the learning module (learning outcomes and student journeys)  |
+| `/course.plan`          | Create instructional plans with your chosen delivery approach        |
+| `/course.tasks`         | Generate actionable task lists for course development                |
+| `/course.implement`     | Execute all tasks to build the course module according to the plan   |
 
 #### Optional Commands
 
@@ -230,15 +230,15 @@ Additional commands for enhanced quality and validation:
 
 | Command              | Description                                                           |
 |----------------------|-----------------------------------------------------------------------|
-| `/speckit.clarify`   | Clarify underspecified areas (recommended before `/speckit.plan`; formerly `/quizme`) |
-| `/speckit.analyze`   | Cross-artifact consistency & coverage analysis (run after `/speckit.tasks`, before `/speckit.implement`) |
-| `/speckit.checklist` | Generate custom quality checklists that validate requirements completeness, clarity, and consistency (like "unit tests for English") |
+| `/course.clarify`   | Clarify underspecified areas (recommended before `/course.plan`; formerly `/quizme`) |
+| `/course.analyze`   | Cross-artifact consistency & coverage analysis (run after `/course.tasks`, before `/course.implement`) |
+| `/course.checklist` | Generate custom quality checklists that validate requirements completeness, clarity, and consistency (like "unit tests for English") |
 
 ### Environment Variables
 
 | Variable         | Description                                                                                    |
 |------------------|------------------------------------------------------------------------------------------------|
-| `SPECIFY_FEATURE` | Override feature detection for non-Git repositories. Set to the feature directory name (e.g., `001-photo-albums`) to work on a specific feature when not using Git branches.<br/>**Must be set in the context of the agent you're working with prior to using `/speckit.plan` or follow-up commands. |
+| `SPECIFY_FEATURE` | Override feature detection for non-Git repositories. Set to the feature directory name (e.g., `001-photo-albums`) to work on a specific feature when not using Git branches.<br/>**Must be set in the context of the agent you're working with prior to using `/course.plan` or follow-up commands. |
 
 ## 📚 Core philosophy
 
@@ -357,19 +357,19 @@ Go to the project folder and run your AI agent. In our example, we're using `cla
 
 ![Bootstrapping Claude Code environment](./media/bootstrap-claude-code.gif)
 
-You will know that things are configured correctly if you see the `/speckit.constitution`, `/speckit.specify`, `/speckit.plan`, `/speckit.tasks`, and `/speckit.implement` commands available.
+You will know that things are configured correctly if you see the `/course.constitution`, `/course.specify`, `/course.plan`, `/course.tasks`, and `/course.implement` commands available.
 
-The first step should be establishing your project's governing principles using the `/speckit.constitution` command. This helps ensure consistent decision-making throughout all subsequent development phases:
+The first step should be establishing your project's governing principles using the `/course.constitution` command. This helps ensure consistent decision-making throughout all subsequent development phases:
 
 ```text
-/speckit.constitution Create principles focused on code quality, testing standards, user experience consistency, and performance requirements. Include governance for how these principles should guide technical decisions and implementation choices.
+/course.constitution Create principles focused on code quality, testing standards, user experience consistency, and performance requirements. Include governance for how these principles should guide technical decisions and implementation choices.
 ```
 
 This step creates or updates the `.specify/memory/constitution.md` file with your project's foundational guidelines that the AI agent will reference during specification, planning, and implementation phases.
 
 ### **STEP 2:** Create project specifications
 
-With your project principles established, you can now create the functional specifications. Use the `/speckit.specify` command and then provide the concrete requirements for the project you want to develop.
+With your project principles established, you can now create the functional specifications. Use the `/course.specify` command and then provide the concrete requirements for the project you want to develop.
 
 >[!IMPORTANT]
 >Be as explicit as possible about _what_ you are trying to build and _why_. **Do not focus on the tech stack at this point**.
@@ -429,12 +429,12 @@ With the baseline specification created, you can go ahead and clarify any of the
 You should run the structured clarification workflow **before** creating a technical plan to reduce rework downstream.
 
 Preferred order:
-1. Use `/speckit.clarify` (structured) – sequential, coverage-based questioning that records answers in a Clarifications section.
+1. Use `/course.clarify` (structured) – sequential, coverage-based questioning that records answers in a Clarifications section.
 2. Optionally follow up with ad-hoc free-form refinement if something still feels vague.
 
 If you intentionally want to skip clarification (e.g., spike or exploratory prototype), explicitly state that so the agent doesn't block on missing clarifications.
 
-Example free-form refinement prompt (after `/speckit.clarify` if still needed):
+Example free-form refinement prompt (after `/course.clarify` if still needed):
 
 ```text
 For each sample project or project that you create there should be a variable number of tasks between 5 and 15
@@ -452,7 +452,7 @@ It's important to use the interaction with Claude Code as an opportunity to clar
 
 ### **STEP 4:** Generate a plan
 
-You can now be specific about the tech stack and other technical requirements. You can use the `/speckit.plan` command that is built into the project template with a prompt like this:
+You can now be specific about the tech stack and other technical requirements. You can use the `/course.plan` command that is built into the project template with a prompt like this:
 
 ```text
 We are going to generate this using .NET Aspire, using Postgres as the database. The frontend should use
@@ -536,12 +536,12 @@ You can also ask Claude Code (if you have the [GitHub CLI](https://docs.github.c
 >[!NOTE]
 >Before you have the agent implement it, it's also worth prompting Claude Code to cross-check the details to see if there are any over-engineered pieces (remember - it can be over-eager). If over-engineered components or decisions exist, you can ask Claude Code to resolve them. Ensure that Claude Code follows the [constitution](base/memory/constitution.md) as the foundational piece that it must adhere to when establishing the plan.
 
-### **STEP 6:** Generate task breakdown with /speckit.tasks
+### **STEP 6:** Generate task breakdown with /course.tasks
 
-With the implementation plan validated, you can now break down the plan into specific, actionable tasks that can be executed in the correct order. Use the `/speckit.tasks` command to automatically generate a detailed task breakdown from your implementation plan:
+With the implementation plan validated, you can now break down the plan into specific, actionable tasks that can be executed in the correct order. Use the `/course.tasks` command to automatically generate a detailed task breakdown from your implementation plan:
 
 ```text
-/speckit.tasks
+/course.tasks
 ```
 
 This step creates a `tasks.md` file in your feature specification directory that contains:
@@ -553,17 +553,17 @@ This step creates a `tasks.md` file in your feature specification directory that
 - **Test-driven development structure** - If tests are requested, test tasks are included and ordered to be written before implementation
 - **Checkpoint validation** - Each user story phase includes checkpoints to validate independent functionality
 
-The generated tasks.md provides a clear roadmap for the `/speckit.implement` command, ensuring systematic implementation that maintains code quality and allows for incremental delivery of user stories.
+The generated tasks.md provides a clear roadmap for the `/course.implement` command, ensuring systematic implementation that maintains code quality and allows for incremental delivery of user stories.
 
 ### **STEP 7:** Implementation
 
-Once ready, use the `/speckit.implement` command to execute your implementation plan:
+Once ready, use the `/course.implement` command to execute your implementation plan:
 
 ```text
-/speckit.implement
+/course.implement
 ```
 
-The `/speckit.implement` command will:
+The `/course.implement` command will:
 - Validate that all prerequisites are in place (constitution, spec, plan, and tasks)
 - Parse the task breakdown from `tasks.md`
 - Execute tasks in the correct order, respecting dependencies and parallel execution markers
