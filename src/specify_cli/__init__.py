@@ -10,16 +10,16 @@
 # ]
 # ///
 """
-Specify CLI - Setup tool for Specify projects
+Specify CLI - Setup tool for Specify course projects
 
 Usage:
-    uvx specify-cli.py init <project-name>
+    uvx specify-cli.py init <course-project-name>
     uvx specify-cli.py init .
     uvx specify-cli.py init --here
 
 Or install globally:
     uv tool install --from specify-cli.py specify-cli
-    specify init <project-name>
+    specify init <course-project-name>
     specify init .
     specify init --here
 """
@@ -151,15 +151,15 @@ SCRIPT_TYPE_CHOICES = {"sh": "POSIX Shell (bash/zsh)", "ps": "PowerShell"}
 CLAUDE_LOCAL_PATH = Path.home() / ".claude" / "local" / "claude"
 
 BANNER = """
-███████╗██████╗ ███████╗ ██████╗██╗███████╗██╗   ██╗
-██╔════╝██╔══██╗██╔════╝██╔════╝██║██╔════╝╚██╗ ██╔╝
-███████╗██████╔╝█████╗  ██║     ██║█████╗   ╚████╔╝ 
-╚════██║██╔═══╝ ██╔══╝  ██║     ██║██╔══╝    ╚██╔╝  
-███████║██║     ███████╗╚██████╗██║██║        ██║   
-╚══════╝╚═╝     ╚══════╝ ╚═════╝╚═╝╚═╝        ╚═╝   
+ ██████╗ ██████╗ ██╗   ██╗██████╗ ███████╗███████╗
+██╔════╝██╔═══██╗██║   ██║██╔══██╗██╔════╝██╔════╝
+██║     ██║   ██║██║   ██║██████╔╝███████╗█████╗  
+██║     ██║   ██║██║   ██║██╔══██╗╚════██║██╔══╝  
+╚██████╗╚██████╔╝╚██████╔╝██║  ██║███████║███████╗
+ ╚═════╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝
 """
 
-TAGLINE = "GitHub Spec Kit - Spec-Driven Development Toolkit"
+TAGLINE = "Course Spec Kit - Spec-Driven Course Development Toolkit"
 class StepTracker:
     """Track and render hierarchical steps without emojis, similar to Claude Code tree output.
     Supports live auto-refresh via an attached refresh callback.

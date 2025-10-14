@@ -1,50 +1,50 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+# [COURSE_NAME] Constitution
+<!-- Example: JavaScript Web Development Course Constitution, React Fundamentals Course Constitution, etc. -->
 
 ## Core Principles
 
 ### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
+<!-- Example: I. Hands-On Learning First -->
 [PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+<!-- Example: Every concept starts with a hands-on coding exercise; Exercises must be self-contained, independently testable, with clear instructions; Clear learning objective required - no exercises just for practice sake -->
 
 ### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
+<!-- Example: II. Real-World Projects -->
 [PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+<!-- Example: Every module builds toward a real-world project; Projects should solve actual problems students care about; Support both guided and independent project work -->
 
 ### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
+<!-- Example: III. Assessment-First (NON-NEGOTIABLE) -->
 [PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+<!-- Example: Assessment-driven design mandatory: Learning objectives defined → Assessment created → Learning activities designed; Backward design strictly enforced -->
 
 ### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
+<!-- Example: IV. Accessibility Standards -->
 [PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+<!-- Example: All content must meet WCAG 2.1 AA standards; Code examples must be screen-reader friendly; Provide multiple learning modalities (text, video, interactive) -->
 
 ### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
+<!-- Example: V. Student Engagement, VI. Progressive Complexity, VII. Practical Application -->
 [PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+<!-- Example: Interactive elements required for engagement; Scaffolded learning approach; Or: Build complexity gradually; Or: Start simple, avoid overwhelming beginners -->
 
 ## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+<!-- Example: Additional Constraints, Technology Requirements, Assessment Policies, etc. -->
 
 [SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+<!-- Example: JavaScript-focused tech stack, browser-based development, specific LMS requirements, etc. -->
 
 ## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+<!-- Example: Instructional Workflow, Peer Review Process, Quality Gates, etc. -->
 
 [SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+<!-- Example: Peer review requirements, student feedback collection, content approval process, etc. -->
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+<!-- Example: Constitution supersedes all other instructional practices; Amendments require documentation, approval, migration plan -->
 
 [GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+<!-- Example: All content/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for ongoing course development guidance -->
 
 **Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
 <!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
