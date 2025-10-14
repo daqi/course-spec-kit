@@ -168,7 +168,7 @@ export async function initCommand(
     console.log(chalk.white("  # Start your AI coding assistant"));
     console.log(
       chalk.white(
-        "  # Use /speckit.constitution, /speckit.specify, /speckit.plan, /speckit.tasks, /speckit.implement"
+        "  # Use /course.constitution, /course.specify, /course.plan, /course.tasks, /course.implement"
       )
     );
     console.log();

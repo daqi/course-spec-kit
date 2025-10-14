@@ -7,6 +7,27 @@ All notable changes to the Course Specify CLI and templates are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.0.24] - 2025-10-14
+
+### Changed
+
+- **BREAKING**: Command prefix changed from `/speckit.` to `/course.`
+- All slash commands now use `/course.` prefix (e.g., `/course.constitution`, `/course.specify`, `/course.plan`, `/course.tasks`, `/course.implement`)
+- Updated all documentation and templates to reflect new command prefix
+
+### Migration Notes
+
+- If you have existing projects, update your workflow to use the new command prefix:
+  - `/speckit.constitution` → `/course.constitution`
+  - `/speckit.specify` → `/course.specify`
+  - `/speckit.plan` → `/course.plan`
+  - `/speckit.tasks` → `/course.tasks`
+  - `/speckit.implement` → `/course.implement`
+  - `/speckit.clarify` → `/course.clarify`
+  - `/speckit.analyze` → `/course.analyze`
+  - `/speckit.checklist` → `/course.checklist`
+- All functionality remains identical, only the command prefix has changed
+
 ## [0.0.23] - 2025-10-14
 
 ### Removed
@@ -77,7 +98,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Note
 
-This is a fork of github/spec-kit adapted for internet course design and development. The command structure remains identical (`/speckit.constitution`, `/speckit.specify`, `/speckit.plan`, `/speckit.tasks`, `/speckit.implement`) but all content and guidance is adapted for educational contexts.
+This is a fork of github/spec-kit adapted for internet course design and development. The command structure was initially identical to the original spec-kit (`/speckit.constitution`, `/speckit.specify`, `/speckit.plan`, `/speckit.tasks`, `/speckit.implement`) but all content and guidance is adapted for educational contexts. (Note: Command prefix changed to `/course.` in version 0.0.24)
 
 ## [0.0.19] - 2025-10-10
 
