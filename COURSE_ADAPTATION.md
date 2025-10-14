@@ -88,10 +88,10 @@ Course Spec Kit is a fork of GitHub's Spec Kit, adapted specifically for **Spec-
 
 ### 5. CLI Updates
 
-**`src/specify_cli/__init__.py`**:
-- Changed BANNER ASCII art from "SPECIFY" to "COURSE"
-- Updated TAGLINE to "Course Spec Kit - Spec-Driven Course Development Toolkit"
-- Updated docstrings to reference "course projects" instead of general "projects"
+**`src-js/index.ts`** and **`src-js/config.ts`**:
+- Updated CLI branding to reference "course projects" instead of general "projects"
+- Modified configuration to support educational use cases
+- Updated command descriptions to use educational terminology
 
 ## Command Structure (Unchanged)
 

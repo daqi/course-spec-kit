@@ -7,6 +7,21 @@ All notable changes to the Course Specify CLI and templates are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.0.23] - 2025-10-14
+
+### Removed
+
+- **BREAKING**: Removed deprecated Python CLI implementation (`src/specify_cli/`)
+- Removed Python build configuration (`pyproject.toml`)
+- Removed Python installation instructions from README.md
+- Python CLI has been fully replaced by the Node.js/TypeScript version
+
+### Migration Notes
+
+- The Python version is no longer available
+- All users must use the Node.js version: `npm install -g git+https://github.com/daqi/course-spec-kit.git`
+- See `docs/MIGRATION.md` for complete migration guide from Python to Node.js version
+
 ## [0.0.22] - 2025-10-14
 
 ### Changed

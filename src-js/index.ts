@@ -39,7 +39,7 @@ program.helpInformation = function () {
 program
   .name("course-specify")
   .description("Setup tool for Specify spec-driven course development projects")
-  .version("0.0.22");
+  .version("0.0.23");
 
 // Check command
 program

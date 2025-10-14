@@ -55,16 +55,16 @@ Follow these steps to add a new agent (using a hypothetical new agent as an exam
 
 **IMPORTANT**: Use the actual CLI tool name as the key, not a shortened version.
 
-Add the new agent to the `AGENT_CONFIG` dictionary in `src/specify_cli/__init__.py`. This is the **single source of truth** for all agent metadata:
+Add the new agent to the `AGENT_CONFIG` dictionary in `src-js/config.ts`. This is the **single source of truth** for all agent metadata:
 
-```python
+```typescript
 AGENT_CONFIG = {
-    # ... existing agents ...
-    "new-agent-cli": {  # Use the ACTUAL CLI tool name (what users type in terminal)
-        "name": "New Agent Display Name",
-        "folder": ".newagent/",  # Directory for agent files
-        "install_url": "https://example.com/install",  # URL for installation docs (or None if IDE-based)
-        "requires_cli": True,  # True if CLI tool required, False for IDE-based agents
+    // ... existing agents ...
+    "new-agent-cli": {  // Use the ACTUAL CLI tool name (what users type in terminal)
+        name: "New Agent Display Name",
+        folder: ".newagent/",  // Directory for agent files
+        installUrl: "https://example.com/install",  // URL for installation docs (or null if IDE-based)
+        requiresCli: true,  // true if CLI tool required, false for IDE-based agents
     },
 }
 ```
@@ -78,16 +78,12 @@ This eliminates the need for special-case mappings throughout the codebase.
 **Field Explanations**:
 - `name`: Human-readable display name shown to users
 - `folder`: Directory where agent-specific files are stored (relative to project root)
-- `install_url`: Installation documentation URL (set to `None` for IDE-based agents)
-- `requires_cli`: Whether the agent requires a CLI tool check during initialization
+- `installUrl`: Installation documentation URL (set to `null` for IDE-based agents)
+- `requiresCli`: Whether the agent requires a CLI tool check during initialization
 
 #### 2. Update CLI Help Text
 
-Update the `--ai` parameter help text in the `init()` command to include the new agent:
-
-```python
-ai_assistant: str = typer.Option(None, "--ai", help="AI assistant to use: claude, gemini, copilot, cursor-agent, qwen, opencode, codex, windsurf, kilocode, auggie, codebuddy, new-agent-cli, or q"),
-```
+Update the `--ai` parameter help text in the `init()` command to include the new agent. The command implementation is in `src-js/commands/init.ts`.
 
 Also update any function docstrings, examples, and error messages that list available agents.
 
@@ -146,21 +142,7 @@ const AGENT_FILES: Record<string, AgentFileConfig> = {
 
 #### 6. Update CLI Tool Checks (Optional)
 
-For agents that require CLI tools, add checks in the `check()` command and agent validation:
-
-```python
-# In check() command
-tracker.add("windsurf", "Windsurf IDE (optional)")
-windsurf_ok = check_tool_for_tracker("windsurf", "https://windsurf.com/", tracker)
-
-# In init validation (only if CLI tool required)
-elif selected_ai == "windsurf":
-    if not check_tool("windsurf", "Install from: https://windsurf.com/"):
-        console.print("[red]Error:[/red] Windsurf CLI is required for Windsurf projects")
-        agent_tool_missing = True
-```
-
-**Note**: CLI tool checks are now handled automatically based on the `requires_cli` field in AGENT_CONFIG. No additional code changes needed in the `check()` or `init()` commands - they automatically loop through AGENT_CONFIG and check tools as needed.
+**Note**: CLI tool checks are now handled automatically based on the `requiresCli` field in AGENT_CONFIG. No additional code changes needed in the `check()` or `init()` commands - they automatically loop through AGENT_CONFIG and check tools as needed.
 
 ## Important Design Decisions
 
@@ -169,7 +151,7 @@ elif selected_ai == "windsurf":
 **CRITICAL**: When adding a new agent to AGENT_CONFIG, always use the **actual executable name** as the dictionary key, not a shortened or convenient version.
 
 **Why this matters:**
-- The `check_tool()` function uses `shutil.which(tool)` to find executables in the system PATH
+- The tool checking logic uses the system PATH to find executables
 - If the key doesn't match the actual CLI tool name, you'll need special-case mappings throughout the codebase
 - This creates unnecessary complexity and maintenance burden
 
