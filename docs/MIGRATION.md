@@ -18,6 +18,9 @@ Starting from version 0.0.21, the Course Specify CLI has been refactored from Py
   - Dependencies: commander, chalk, @inquirer/prompts, node-fetch, extract-zip, ora
   - Package manager: npm
 
+- **After (v0.0.22+):**
+  - CLI command renamed from `specify` to `course-specify`
+
 ### Installation
 
 #### Old Method (Python - Deprecated)
@@ -40,10 +43,10 @@ npx git+https://github.com/daqi/course-spec-kit.git init <project-name>
 
 ## What Stayed the Same?
 
-All command-line functionality remains **100% identical**:
+All command-line functionality remains **100% identical** (except command name changed from `specify` to `course-specify` in v0.0.22):
 
-- `specify init [project-name]` - Initialize a new project
-- `specify check` - Check system requirements
+- `course-specify init [project-name]` - Initialize a new project (was `specify init` before v0.0.22)
+- `course-specify check` - Check system requirements (was `specify check` before v0.0.22)
 - All command-line options (`--ai`, `--script`, `--here`, `--force`, etc.)
 - All AI agent support (claude, gemini, copilot, cursor-agent, etc.)
 - Template downloading and extraction behavior
@@ -66,8 +69,8 @@ All command-line functionality remains **100% identical**:
 
 3. **Verify installation:**
    ```bash
-   specify --version
-   specify check
+   course-specify --version
+   course-specify check
    ```
 
 ### If You're Starting Fresh
@@ -105,7 +108,7 @@ npm install -g git+https://github.com/daqi/course-spec-kit.git
 
 ## Troubleshooting
 
-### "specify: command not found" after installation
+### "course-specify: command not found" after installation
 
 Make sure npm's global bin directory is in your PATH:
 
@@ -135,8 +138,8 @@ nvm use 18
 Make sure you've uninstalled the Python version and the npm version is first in your PATH:
 
 ```bash
-which specify  # Should point to npm installation
-specify --version  # Should show 0.0.21 or higher
+which course-specify  # Should point to npm installation
+course-specify --version  # Should show 0.0.22 or higher
 ```
 
 ## For Developers

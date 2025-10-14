@@ -7,6 +7,20 @@ All notable changes to the Course Specify CLI and templates are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.0.22] - 2025-10-14
+
+### Changed
+
+- **BREAKING**: CLI command renamed from `specify` to `course-specify`
+- Updated all documentation to reflect new CLI command name
+- Updated package.json bin entry to use `course-specify`
+
+### Migration Notes
+
+- If you have the CLI installed globally, reinstall with: `npm install -g git+https://github.com/daqi/course-spec-kit.git`
+- Command usage changes from `specify init` to `course-specify init`
+- All functionality remains identical, only the command name has changed
+
 ## [0.0.21] - 2025-10-14
 
 ### Changed

@@ -37,9 +37,9 @@ program.helpInformation = function () {
 };
 
 program
-  .name("specify")
+  .name("course-specify")
   .description("Setup tool for Specify spec-driven course development projects")
-  .version("0.0.21");
+  .version("0.0.22");
 
 // Check command
 program
@@ -87,7 +87,7 @@ program
 // Show banner when no command is provided
 program.action(() => {
   showBanner();
-  console.log(chalk.gray("Run 'specify --help' for usage information\n"));
+  console.log(chalk.gray("Run 'course-specify --help' for usage information\n"));
 });
 
 // Parse arguments

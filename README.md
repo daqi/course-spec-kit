@@ -57,11 +57,11 @@ npm install -g git+https://github.com/daqi/course-spec-kit.git
 Then use the tool directly:
 
 ```bash
-specify init <COURSE_PROJECT_NAME>
-specify check
+course-specify init <COURSE_PROJECT_NAME>
+course-specify check
 ```
 
-To upgrade specify run:
+To upgrade course-specify run:
 
 ```bash
 npm update -g specify-cli
@@ -168,7 +168,7 @@ The `specify` command supports the following options:
 | `init`      | Initialize a new Specify project from the latest template      |
 | `check`     | Check for installed tools (`git`, `claude`, `gemini`, `code`/`code-insiders`, `cursor-agent`, `windsurf`, `qwen`, `opencode`, `codex`) |
 
-### `specify init` Arguments & Options
+### `course-specify init` Arguments & Options
 
 | Argument/Option        | Type     | Description                                                                  |
 |------------------------|----------|------------------------------------------------------------------------------|
@@ -187,46 +187,46 @@ The `specify` command supports the following options:
 
 ```bash
 # Basic project initialization
-specify init my-project
+course-specify init my-project
 
 # Initialize with specific AI assistant
-specify init my-project --ai claude
+course-specify init my-project --ai claude
 
 # Initialize with Cursor support
-specify init my-project --ai cursor-agent
+course-specify init my-project --ai cursor-agent
 
 # Initialize with Windsurf support
-specify init my-project --ai windsurf
+course-specify init my-project --ai windsurf
 
 # Initialize with PowerShell scripts (Windows/cross-platform)
-specify init my-project --ai copilot --script ps
+course-specify init my-project --ai copilot --script ps
 
 # Initialize in current directory
-specify init . --ai copilot
+course-specify init . --ai copilot
 # or use the --here flag
-specify init --here --ai copilot
+course-specify init --here --ai copilot
 
 # Force merge into current (non-empty) directory without confirmation
-specify init . --force --ai copilot
+course-specify init . --force --ai copilot
 # or 
-specify init --here --force --ai copilot
+course-specify init --here --force --ai copilot
 
 # Skip git initialization
-specify init my-project --ai gemini --no-git
+course-specify init my-project --ai gemini --no-git
 
 # Enable debug output for troubleshooting
-specify init my-project --ai claude --debug
+course-specify init my-project --ai claude --debug
 
 # Use GitHub token for API requests (helpful for corporate environments)
-specify init my-project --ai claude --github-token ghp_your_token_here
+course-specify init my-project --ai claude --github-token ghp_your_token_here
 
 # Check system requirements
-specify check
+course-specify check
 ```
 
 ### Available Slash Commands
 
-After running `specify init`, your AI coding agent will have access to these slash commands for structured development:
+After running `course-specify init`, your AI coding agent will have access to these slash commands for structured development:
 
 #### Core Commands
 
@@ -324,19 +324,19 @@ If you encounter issues with an agent, please open an issue so we can refine the
 You can use the Specify CLI to bootstrap your project, which will bring in the required artifacts in your environment. Run:
 
 ```bash
-specify init <project_name>
+course-specify init <project_name>
 ```
 
 Or initialize in the current directory:
 
 ```bash
-specify init .
+course-specify init .
 # or use the --here flag
-specify init --here
+course-specify init --here
 # Skip confirmation when the directory already has files
-specify init . --force
+course-specify init . --force
 # or
-specify init --here --force
+course-specify init --here --force
 ```
 
 ![Specify CLI bootstrapping a new project in the terminal](./media/specify_cli.gif)
@@ -344,29 +344,29 @@ specify init --here --force
 You will be prompted to select the AI agent you are using. You can also proactively specify it directly in the terminal:
 
 ```bash
-specify init <project_name> --ai claude
-specify init <project_name> --ai gemini
-specify init <project_name> --ai copilot
+course-specify init <project_name> --ai claude
+course-specify init <project_name> --ai gemini
+course-specify init <project_name> --ai copilot
 
 # Or in current directory:
-specify init . --ai claude
-specify init . --ai codex
+course-specify init . --ai claude
+course-specify init . --ai codex
 
 # or use --here flag
-specify init --here --ai claude
-specify init --here --ai codex
+course-specify init --here --ai claude
+course-specify init --here --ai codex
 
 # Force merge into a non-empty current directory
-specify init . --force --ai claude
+course-specify init . --force --ai claude
 
 # or
-specify init --here --force --ai claude
+course-specify init --here --force --ai claude
 ```
 
 The CLI will check if you have Claude Code, Gemini CLI, Cursor CLI, Qwen CLI, opencode, Codex CLI, or Amazon Q Developer CLI installed. If you do not, or you prefer to get the templates without checking for the right tools, use `--ignore-agent-tools` with your command:
 
 ```bash
-specify init <project_name> --ai claude --ignore-agent-tools
+course-specify init <project_name> --ai claude --ignore-agent-tools
 ```
 
 ### **STEP 1:** Establish project principles
