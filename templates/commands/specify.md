@@ -1,8 +1,6 @@
 ---
 description: Create or update the learning module specification from a natural language module description.
-scripts:
-  sh: scripts/bash/create-new-feature.sh --json "{ARGS}"
-  ps: scripts/powershell/create-new-feature.ps1 -Json "{ARGS}"
+script: node .specify/scripts/create-new-feature.js --json "{ARGS}"
 ---
 
 ## User Input
