@@ -79,20 +79,20 @@ EXAMPLES:
     // Validate required directories and files
     if (!(await fileExists(paths.FEATURE_DIR))) {
       console.error(`ERROR: Feature directory not found: ${paths.FEATURE_DIR}`);
-      console.error("Run /speckit.specify first to create the feature structure.");
+      console.error("Run /course.specify first to create the feature structure.");
       process.exit(1);
     }
 
     if (!(await fileExists(paths.IMPL_PLAN))) {
       console.error(`ERROR: plan.md not found in ${paths.FEATURE_DIR}`);
-      console.error("Run /speckit.plan first to create the implementation plan.");
+      console.error("Run /course.plan first to create the implementation plan.");
       process.exit(1);
     }
 
     // Check for tasks.md if required
     if (options.requireTasks && !(await fileExists(paths.TASKS))) {
       console.error(`ERROR: tasks.md not found in ${paths.FEATURE_DIR}`);
-      console.error("Run /speckit.tasks first to create the task list.");
+      console.error("Run /course.tasks first to create the task list.");
       process.exit(1);
     }
 

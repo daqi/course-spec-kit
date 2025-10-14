@@ -98,11 +98,11 @@ Course Spec Kit is a fork of GitHub's Spec Kit, adapted specifically for **Spec-
 The commands remain the same for ease of use:
 
 ```bash
-/speckit.constitution   # Create or update course governing principles
-/speckit.specify        # Define learning module specifications
-/speckit.plan          # Create instructional plans
-/speckit.tasks         # Generate actionable task lists
-/speckit.implement     # Execute course development
+/course.constitution   # Create or update course governing principles
+/course.specify        # Define learning module specifications
+/course.plan          # Create instructional plans
+/course.tasks         # Generate actionable task lists
+/course.implement     # Execute course development
 ```
 
 ## Target Audience
@@ -122,19 +122,19 @@ Example workflow for creating an interactive JavaScript course module:
 specify init my-js-course --ai copilot
 
 # 2. Establish course principles
-/speckit.constitution Create principles focused on learning outcomes, student engagement, accessibility standards, and assessment quality for a JavaScript web development course
+/course.constitution Create principles focused on learning outcomes, student engagement, accessibility standards, and assessment quality for a JavaScript web development course
 
 # 3. Define a learning module
-/speckit.specify Create a module that teaches students how to build interactive web applications using modern JavaScript. Students should learn asynchronous programming concepts, DOM manipulation, and event handling.
+/course.specify Create a module that teaches students how to build interactive web applications using modern JavaScript. Students should learn asynchronous programming concepts, DOM manipulation, and event handling.
 
 # 4. Create instructional plan
-/speckit.plan The course uses interactive coding exercises with vanilla JavaScript, HTML, and CSS. Students will work on hands-on projects using browser-based development environments.
+/course.plan The course uses interactive coding exercises with vanilla JavaScript, HTML, and CSS. Students will work on hands-on projects using browser-based development environments.
 
 # 5. Generate tasks
-/speckit.tasks
+/course.tasks
 
 # 6. Execute development
-/speckit.implement
+/course.implement
 ```
 
 ## Technology Focus
