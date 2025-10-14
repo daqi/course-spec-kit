@@ -75,22 +75,6 @@ Run directly without installing:
 npx git+https://github.com/daqi/course-spec-kit.git init <COURSE_PROJECT_NAME>
 ```
 
-#### Option 3: Python (Legacy - Deprecated)
-
-> **Note:** The Python version is deprecated. Please use the npm version above.
-
-```bash
-uv tool install specify-cli --from git+https://github.com/daqi/course-spec-kit.git
-```
-
-**Benefits of npm installation:**
-
-- Modern JavaScript/TypeScript toolchain with better cross-platform support
-- Faster startup and execution
-- Better dependency management
-- Tool stays installed and available in PATH
-- Compatible with all major operating systems
-
 ### 2. Establish course principles
 
 Use the **`/speckit.constitution`** command to create your course's governing principles and instructional guidelines that will guide all subsequent course development.
@@ -304,8 +288,6 @@ Our research and experimentation focus on:
 - **Node.js 18.0.0 or higher** - [Download Node.js](https://nodejs.org/)
 - **Git** - [Download Git](https://git-scm.com/downloads)
 - AI coding agent: [Claude Code](https://www.anthropic.com/claude-code), [GitHub Copilot](https://code.visualstudio.com/), [Gemini CLI](https://github.com/google-gemini/gemini-cli), [Cursor](https://cursor.sh/), [Qwen CLI](https://github.com/QwenLM/qwen-code), [opencode](https://opencode.ai/), [Codex CLI](https://github.com/openai/codex), [Windsurf](https://windsurf.com/), or [Amazon Q Developer CLI](https://aws.amazon.com/developer/learning/q-developer-cli/)
-
-**Note:** The Python version (requiring Python 3.11+ and uv) is deprecated. Please use the npm version instead.
 
 If you encounter issues with an agent, please open an issue so we can refine the integration.
 
