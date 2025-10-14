@@ -62,7 +62,6 @@ program
     "--ai <assistant>",
     "AI assistant to use: claude, gemini, copilot, cursor-agent, qwen, opencode, codex, windsurf, kilocode, auggie, roo, codebuddy, or q"
   )
-  .option("--script <type>", "Script variant to use: sh (bash/zsh) or ps (PowerShell)")
   .option("--ignore-agent-tools", "Skip checks for AI agent tools like Claude Code")
   .option("--no-git", "Skip git repository initialization")
   .option("--here", "Initialize project in the current directory instead of creating a new one")

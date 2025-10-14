@@ -40,12 +40,11 @@ export async function fetchLatestRelease(githubToken?: string): Promise<GitHubRe
  */
 export async function downloadTemplate(
   aiAssistant: string,
-  scriptType: string,
   downloadDir: string,
   githubToken?: string
 ): Promise<{ zipPath: string; release: GitHubRelease }> {
   const release = await fetchLatestRelease(githubToken);
-  const assetName = `spec-kit-template-${aiAssistant}-${scriptType}-${release.tag_name}.zip`;
+  const assetName = `spec-kit-template-${aiAssistant}-${release.tag_name}.zip`;
 
   const asset = release.assets.find((a) => a.name === assetName);
   if (!asset) {
@@ -85,13 +84,12 @@ export async function extractTemplate(zipPath: string, destination: string): Pro
 export async function downloadAndExtractTemplate(
   projectPath: string,
   aiAssistant: string,
-  scriptType: string,
   githubToken?: string
 ): Promise<void> {
   const tmpDir = await fs.mkdtemp(path.join(os.tmpdir(), "specify-"));
 
   try {
-    const { zipPath } = await downloadTemplate(aiAssistant, scriptType, tmpDir, githubToken);
+    const { zipPath } = await downloadTemplate(aiAssistant, tmpDir, githubToken);
     await extractTemplate(zipPath, projectPath);
   } finally {
     // Clean up temp directory
