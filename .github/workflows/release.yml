@@ -44,7 +44,6 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: 24
-          cache: 'pnpm'
       - name: Setup pnpm
         if: steps.check_release.outputs.exists == 'false'
         uses: pnpm/action-setup@v4
