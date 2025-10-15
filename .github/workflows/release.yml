@@ -49,12 +49,9 @@ jobs:
         uses: pnpm/action-setup@v4
         with:
           version: 10
-      - name: Install dependencies
+      - name: Install and Build
         if: steps.check_release.outputs.exists == 'false'
-        run: pnpm install --frozen-lockfile
-      - name: Build TypeScript
-        if: steps.check_release.outputs.exists == 'false'
-        run: pnpm build
+        run: pnpm install --frozen-lockfile && pnpm build
       - name: Create release package variants
         if: steps.check_release.outputs.exists == 'false'
         run: |
