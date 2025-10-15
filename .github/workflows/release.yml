@@ -18,6 +18,10 @@ jobs:
       contents: write
       pull-requests: write
     steps:
+      - name: Debug context
+        run: |
+          echo "GITHUB_REF=$GITHUB_REF"
+          echo "GITHUB_EVENT_NAME=$GITHUB_EVENT_NAME"
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
