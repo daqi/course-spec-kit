@@ -110,8 +110,10 @@ build_variant() {
   # Copy supporting TypeScript utilities (compiled)
   if [[ -d dist/utils ]]; then
     mkdir -p "$SPEC_DIR/utils"
-    cp -r dist/utils/* "$SPEC_DIR/utils/"
-    echo "Copied dist/utils -> .specify/utils"
+    cp dist/utils/feature.js "$SPEC_DIR/utils/"
+    echo "Copied dist/utils/feature.js -> .specify/utils/feature.js"
+    cp dist/utils/files.js "$SPEC_DIR/utils/"
+    echo "Copied dist/utils/files.js -> .specify/utils/files.js"
   fi
   
   [[ -d templates ]] && { mkdir -p "$SPEC_DIR/templates"; find templates -type f -not -path "templates/commands/*" -not -name "vscode-settings.json" -exec cp --parents {} "$SPEC_DIR"/ \; ; echo "Copied templates -> .specify/templates"; }
